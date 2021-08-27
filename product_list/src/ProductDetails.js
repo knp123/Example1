@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Label } from '@fluentui/react/lib/Label';
 import './ProductDetails.css';
 export function ProductDetails(props) {
     const { selectedProduct , updateProductDetails, setSelectedProductDetails} = props;
@@ -22,10 +23,10 @@ export function ProductDetails(props) {
         if (!onEdit) {
             return (
                 <div style = {{display: 'flex', flexDirection: 'column', width: '70%'}}>
-                    <label>ProductName: {selectedProduct.description}</label>
-                    <label>ProductHeight: {selectedProduct.height}</label>
-                    <label>ProductWidth: {selectedProduct.width}</label>
-                    <label>ProductPrice: {selectedProduct.price}</label>
+                    <Label>ProductName: {selectedProduct.description}</Label>
+                    <Label>ProductHeight: {selectedProduct.height}</Label>
+                    <Label>ProductWidth: {selectedProduct.width}</Label>
+                    <Label>ProductPrice: {selectedProduct.price}</Label>
                     <input type='button' onClick={() => setOnEdit(true)} value='EDIT'/>
                 </div>
             )
@@ -34,13 +35,13 @@ export function ProductDetails(props) {
             return (
                 <div className = 'formdiv'>
                 <form onSubmit={handleSubmit} >
-                    <label>ProductName:  <input type='text' name='height' value={selectedProduct.description} disabled /> </label>
-                    <label>Height:
-                        <input type='text' name='height' value={selectedProduct.height} onChange={handleOnChange} /> </label>
-                    <label>Width:
-                        <input type='text' name='width' value={selectedProduct.width} onChange={handleOnChange} /> </label> 
-                    <label> Price:
-                        <input type='text' name='price' value={selectedProduct.price} onChange={handleOnChange} /> </label>
+                    <Label>ProductName:  <input type='text' name='height' value={selectedProduct.description} disabled /> </Label>
+                    <Label>Product Height:
+                        <input type='text' name='height' value={selectedProduct.height} onChange={handleOnChange} /> </Label>
+                    <Label>Product Width:
+                        <input type='text' name='width' value={selectedProduct.width} onChange={handleOnChange} /> </Label> 
+                    <Label> Product Price:
+                        <input type='text' name='price' value={selectedProduct.price} onChange={handleOnChange} /> </Label>
                     <input type = 'submit' value = "Update" disabled = {!updatedDetails}/>
                 </form>
                 </div>
