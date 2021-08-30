@@ -8,7 +8,8 @@ export function Product() {
         },
         productItem:{
             background: '#cce5ff',
-            margin: '5px'
+            margin: '5px',
+            cursor: 'pointer'
         },
       });
     const [selectedProduct, setSelectedProduct] = useState(null);
